@@ -3,10 +3,12 @@ package com.example.AchatLocal.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.AchatLocal.Model.BonDeCommande;
 import com.example.AchatLocal.Repository.BonDeCommandeRepository;
 
+@Service
 public class BonDeCommandeServiceImpl implements BonDeCommandeService {
 	
 	@Autowired

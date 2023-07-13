@@ -3,10 +3,12 @@ package com.example.AchatLocal.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.AchatLocal.Model.DemandeArticle;
 import com.example.AchatLocal.Repository.DemandeArticleRepository;
 
+@Service
 public class DemandeArticleServiceImpl implements DemandeArticleService {
 	
 	@Autowired
