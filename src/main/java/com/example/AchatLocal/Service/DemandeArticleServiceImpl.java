@@ -35,7 +35,7 @@ public class DemandeArticleServiceImpl implements DemandeArticleService {
 	}
 
 	@Override
-	public void deleteRole(Integer id) {
+	public void deleteDemandeArticle(Integer id) {
 		repo.deleteById(id);
 	}
 

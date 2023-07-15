@@ -21,7 +21,7 @@ public class Categorie {
 	private String libelle;
 	
 	@OneToMany
-	@JoinColumn(name="_id", referencedColumnName = "id")
+	@JoinColumn(name="articles_id", referencedColumnName = "id")
 	private List<Article> articles;
 
 }

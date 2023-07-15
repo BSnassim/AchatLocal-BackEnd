@@ -8,7 +8,7 @@ public interface BonDeCommandeService {
 	
 	public List<BonDeCommande> findAll();
 	public BonDeCommande findById(Integer id);
-	public void saveBonDeComande(BonDeCommande bc);
+	public void saveBonDeCommande(BonDeCommande bc);
 	public void updateBonDeCommande(BonDeCommande bc);
 	public void deleteBonDeCommande(Integer id);
 

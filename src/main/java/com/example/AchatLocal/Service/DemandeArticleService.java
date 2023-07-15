@@ -10,7 +10,7 @@ public interface DemandeArticleService {
 	public DemandeArticle findById(Integer id);
 	public void saveDemandeArticle(DemandeArticle da);
 	public void updateDemandeArticle(DemandeArticle da);
-	public void deleteRole(Integer id);
+	public void deleteDemandeArticle(Integer id);
 
 
 }

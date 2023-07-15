@@ -29,9 +29,8 @@ public class RoleEndpoint {
 		return serv.findAll();
 	}
 
-	@GetMapping("/ById/{id}")
+	@GetMapping("/{id}")
 	public Role findRoleById(@PathVariable Integer id) {
-		System.out.println(id);
 		return serv.findById(id);
 	}
 

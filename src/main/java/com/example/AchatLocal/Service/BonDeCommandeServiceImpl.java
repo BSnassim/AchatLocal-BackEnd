@@ -25,7 +25,7 @@ public class BonDeCommandeServiceImpl implements BonDeCommandeService {
 	}
 
 	@Override
-	public void saveBonDeComande(BonDeCommande bc) {
+	public void saveBonDeCommande(BonDeCommande bc) {
 		repo.save(bc);
 	}
 
