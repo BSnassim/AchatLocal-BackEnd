@@ -44,7 +44,7 @@ public class ArticleEndpoint {
 		serv.updateArticle(role);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void deleteArticle(@PathVariable Integer id) {
 		serv.deleteArticle(id);
 	}

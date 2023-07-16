@@ -45,7 +45,7 @@ public class BonDeSortieEndpoint {
 		serv.updateBonDeSortie(role);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void deleteBonDeSortie(@PathVariable Integer id) {
 		serv.deleteBonDeSortie(id);
 	}

@@ -44,7 +44,7 @@ public class CategorieEndpoint {
 		serv.updateCategorie(role);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void deleteCategorie(@PathVariable Integer id) {
 		serv.deleteCategorie(id);
 	}

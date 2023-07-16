@@ -44,7 +44,7 @@ public class RoleEndpoint {
 		serv.updateRole(role);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void deleteRole(@PathVariable Integer id) {
 		serv.deleteRole(id);
 	}

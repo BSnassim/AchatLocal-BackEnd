@@ -45,7 +45,7 @@ public class DemandeAchatEndpoint {
 		serv.updateDemandeAchat(role);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void deleteDemandeAchat(@PathVariable Integer id) {
 		serv.deleteDemandeAchat(id);
 	}
