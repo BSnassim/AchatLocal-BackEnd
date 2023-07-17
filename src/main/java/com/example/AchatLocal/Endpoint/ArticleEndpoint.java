@@ -35,13 +35,13 @@ public class ArticleEndpoint {
 	}
 
 	@PostMapping("")
-	public void saveArticle(@RequestBody Article role) {
-		serv.saveArticle(role);
+	public void saveArticle(@RequestBody Article article) {
+		serv.saveArticle(article);
 	}
 	
 	@PutMapping("")
-	public void updateArticle(@RequestBody Article role) {
-		serv.updateArticle(role);
+	public void updateArticle(@RequestBody Article article) {
+		serv.updateArticle(article);
 	}
 	
 	@DeleteMapping("/{id}")
