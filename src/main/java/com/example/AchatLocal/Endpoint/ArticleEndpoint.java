@@ -33,6 +33,12 @@ public class ArticleEndpoint {
 	public Article findArticleById(@PathVariable Integer id) {
 		return serv.findById(id);
 	}
+	
+	@GetMapping("/categorie/{id}")
+	public List<Article> findAllArticlesByCategorie(@PathVariable Integer id) {
+		return serv.findAllByCategorie(id);
+	}
+
 
 	@PostMapping("")
 	public void saveArticle(@RequestBody Article article) {

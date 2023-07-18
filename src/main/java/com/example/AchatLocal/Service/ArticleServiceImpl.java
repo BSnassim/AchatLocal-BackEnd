@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.AchatLocal.Model.Article;
+import com.example.AchatLocal.Model.Categorie;
 import com.example.AchatLocal.Repository.ArticleRepository;
 
 @Service
@@ -37,6 +38,11 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public void deleteArticle(Integer id) {
 		repo.deleteById(id);
+	}
+
+	@Override
+	public List<Article> findAllByCategorie(Integer id) {
+		return repo.findAllByCategorieId(id);
 	}
 
 }
