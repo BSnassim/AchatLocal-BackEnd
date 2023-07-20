@@ -39,4 +39,14 @@ public class DemandeArticleServiceImpl implements DemandeArticleService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public String natureTraitement(Integer id) {
+		repo.find(id);
+		if(da.getArticle().getStock() < da.getQuantite()) {
+			return da.getArticle().getCategorie().getTypeImportation();
+		} else {
+			return "Bon de sortie";
+		}
+	}
+
 }

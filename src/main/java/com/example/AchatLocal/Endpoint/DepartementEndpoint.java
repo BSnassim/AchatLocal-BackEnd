@@ -13,45 +13,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.AchatLocal.Model.DemandeArticle;
-import com.example.AchatLocal.Service.DemandeArticleService;
+import com.example.AchatLocal.Model.Departement;
+import com.example.AchatLocal.Service.DepartementService;
 
-@RequestMapping("/demandeArticle")
+@RequestMapping("/departements")
 @CrossOrigin
 @RestController
-public class DemandeArticleEndpoint {
+public class DepartementEndpoint {
 	
 	@Autowired
-	private DemandeArticleService serv;
+	private DepartementService serv;
 
 	@GetMapping("")
-	public List<DemandeArticle> findAllDemandeArticles() {
+	public List<Departement> findAllDepartements() {
 		return serv.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public DemandeArticle findDemandeArticleById(@PathVariable Integer id) {
+	public Departement findDepartementById(@PathVariable Integer id) {
 		return serv.findById(id);
 	}
 
 	@PostMapping("")
-	public void saveDemandeArticle(@RequestBody DemandeArticle da) {
-		serv.saveDemandeArticle(da);
+	public void saveDepartement(@RequestBody Departement departement) {
+		serv.saveDepartement(departement);
 	}
 	
 	@PutMapping("")
-	public void updateDemandeArticle(@RequestBody DemandeArticle da) {
-		serv.updateDemandeArticle(da);
+	public void updateDepartement(@RequestBody Departement departement) {
+		serv.updateDepartement(departement);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteDemandeArticle(@PathVariable Integer id) {
-		serv.deleteDemandeArticle(id);
+	public void deleteDepartement(@PathVariable Integer id) {
+		serv.deleteDepartement(id);
 	}
-	
-	@GetMapping("/nature")
-	public String natureTraitement(@PathVariable Integer id) {
-		return serv.natureTraitement(da);
-	}
+
 
 }

@@ -24,5 +24,9 @@ public class Utilisateur {
 	@ManyToOne
 	@JoinColumn(name="role_id", referencedColumnName = "id")
 	private Role role;
+	
+	@ManyToOne
+	@JoinColumn(name="departement_id", referencedColumnName = "id")
+	private Departement departement;
 
 }
