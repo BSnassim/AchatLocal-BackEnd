@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Data
@@ -23,6 +24,7 @@ public class Categorie {
 	
 	@OneToMany
 	@JoinColumn(name="articles_id", referencedColumnName = "id")
+	@Transient
 	private List<Article> articles;
 
 }

@@ -49,9 +49,5 @@ public class DemandeArticleEndpoint {
 		serv.deleteDemandeArticle(id);
 	}
 	
-	@GetMapping("/nature")
-	public String natureTraitement(@PathVariable Integer id) {
-		return serv.natureTraitement(da);
-	}
 
 }

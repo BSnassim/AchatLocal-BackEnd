@@ -19,14 +19,10 @@ public class BonDeCommande {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Date dateCommande;
-	private Integer quantite;
 	
 	@ManyToOne
-	@JoinColumn(name="article_id", referencedColumnName = "id")
-	private Article article;
-	@ManyToOne
-	@JoinColumn(name="demandeur_id", referencedColumnName = "id")
-	private Utilisateur demandeur;
+	@JoinColumn(name="demande_article_id", referencedColumnName = "id")
+	private DemandeArticle demandeArticle;
 	@ManyToOne
 	@JoinColumn(name="magasinier_id", referencedColumnName = "id")
 	private Utilisateur magasinier;

@@ -11,22 +11,18 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Data
 @Entity
 @Table
+@Data
 public class BonDeSortie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Date dateSortie;
-	private Integer quantite;
 	
 	@ManyToOne
-	@JoinColumn(name="article_id", referencedColumnName = "id")
-	private Article article;
-	@ManyToOne
-	@JoinColumn(name="demandeur_id", referencedColumnName = "id")
-	private Utilisateur demandeur;
+	@JoinColumn(name="demande_article_id", referencedColumnName = "id")
+	private DemandeArticle demandeArticle;
 	@ManyToOne
 	@JoinColumn(name="magasinier_id", referencedColumnName = "id")
 	private Utilisateur magasinier;

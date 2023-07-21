@@ -1,10 +1,15 @@
 package com.example.AchatLocal.Service;
 
+import java.sql.Date;
+import java.text.DateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.AchatLocal.Model.BonDeCommande;
+import com.example.AchatLocal.Model.BonDeSortie;
+import com.example.AchatLocal.Model.DemandeAchat;
 import com.example.AchatLocal.Model.DemandeArticle;
 import com.example.AchatLocal.Repository.DemandeArticleRepository;
 
@@ -39,14 +44,5 @@ public class DemandeArticleServiceImpl implements DemandeArticleService {
 		repo.deleteById(id);
 	}
 
-	@Override
-	public String natureTraitement(Integer id) {
-		repo.find(id);
-		if(da.getArticle().getStock() < da.getQuantite()) {
-			return da.getArticle().getCategorie().getTypeImportation();
-		} else {
-			return "Bon de sortie";
-		}
-	}
 
 }

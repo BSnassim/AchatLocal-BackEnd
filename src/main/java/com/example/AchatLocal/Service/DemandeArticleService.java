@@ -11,7 +11,6 @@ public interface DemandeArticleService {
 	public void saveDemandeArticle(DemandeArticle da);
 	public void updateDemandeArticle(DemandeArticle da);
 	public void deleteDemandeArticle(Integer id);
-	public String natureTraitement(Integer id);
 
 
 }
