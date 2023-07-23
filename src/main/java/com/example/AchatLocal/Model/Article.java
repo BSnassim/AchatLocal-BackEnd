@@ -20,8 +20,16 @@ public class Article {
 	private Integer stock;
 	private String caracteristiques;
 	private String marque;
-	
+
 	@ManyToOne
-	@JoinColumn(name="categorie_id", referencedColumnName = "id")
+	@JoinColumn(name = "categorie_id", referencedColumnName = "id")
 	private Categorie categorie;
+
+	public void reduceStock(Integer quantite) {
+		if (quantite <= this.stock) {
+			this.stock -= quantite;
+		} else {
+			System.out.println("Quantite souhaité superieure au stock !");
+		}
+	}
 }
