@@ -21,7 +21,12 @@ public class DemandeArticle {
 	private Date dateDa;
 	private Integer quantite;
 	private String besoin;
-	private String extraDetails;
+	private String extraArticle;
+	private String etat;
+	
+	@ManyToOne
+	@JoinColumn(name="extraCategorie", referencedColumnName = "id")
+	private Categorie extraCategorie;
 	
 	@ManyToOne
 	@JoinColumn(name="article_id", referencedColumnName = "id")

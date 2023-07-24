@@ -39,4 +39,10 @@ public class CategorieServiceImpl implements CategorieService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public List<Categorie> findAllByType(String type) {
+		return (repo.findAllByTypeImportation(type) != null)? repo.findAllByTypeImportation(type) : null;
+
+	}
+
 }

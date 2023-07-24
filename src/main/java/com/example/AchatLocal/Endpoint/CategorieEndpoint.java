@@ -28,6 +28,11 @@ public class CategorieEndpoint {
 	public List<Categorie> findAllCategories() {
 		return serv.findAll();
 	}
+	
+	@GetMapping("/ByType/{type}")
+	public List<Categorie> findAllCategoriesByType(@PathVariable String type) {
+		return serv.findAllByType(type);
+	}
 
 	@GetMapping("/{id}")
 	public Categorie findCategorieById(@PathVariable Integer id) {
