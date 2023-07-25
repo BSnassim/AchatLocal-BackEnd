@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.AchatLocal.Config.PasswordEncoderCreation;
 import com.example.AchatLocal.Model.Utilisateur;
 import com.example.AchatLocal.Repository.UtilisateurRepository;
 
@@ -13,6 +14,9 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	
 	@Autowired
 	private UtilisateurRepository repo;
+	
+	@Autowired
+	private PasswordEncoderCreation pwEN;
 
 	@Override
 	public List<Utilisateur> findAll() {
@@ -26,17 +30,19 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 
 	@Override
 	public Utilisateur findByEmail(String email) {
-		return (repo.findByEmail(email) != null)? repo.findByEmail(email) : null;
+		return (repo.findByEmail(email).isPresent())? repo.findByEmail(email).get() : null ;
 	}
 
 	@Override
 	public void saveUtilisateur(Utilisateur user) {
+		user.setPassword(pwEN.myPasswordEncoder().encode(user.getPassword()));
 		repo.save(user);
 		
 	}
 
 	@Override
 	public void updateUtilisateur(Utilisateur user) {
+		user.setPassword(pwEN.myPasswordEncoder().encode(user.getPassword()));
 		repo.save(user);
 		
 	}
