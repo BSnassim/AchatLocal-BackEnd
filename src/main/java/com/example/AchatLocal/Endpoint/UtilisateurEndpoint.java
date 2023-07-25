@@ -33,6 +33,11 @@ public class UtilisateurEndpoint {
 	public Utilisateur findUtilisateurById(@PathVariable Integer id) {
 		return serv.findById(id);
 	}
+	
+	@GetMapping("/email/{mail}")
+	public Utilisateur findUtilisateurByEmail(@PathVariable String mail) {
+		return serv.findByEmail(mail);
+	}
 
 	@PostMapping("")
 	public void saveUtilisateur(@RequestBody Utilisateur role) {
