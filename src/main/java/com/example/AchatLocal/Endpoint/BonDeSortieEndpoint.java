@@ -1,5 +1,6 @@
 package com.example.AchatLocal.Endpoint;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.AchatLocal.Model.BonDeSortie;
+import com.example.AchatLocal.Model.HistoriqueArticle;
 import com.example.AchatLocal.Service.BonDeSortieService;
+import com.example.AchatLocal.Service.HistoriqueArticleService;
 
 
 @RequestMapping("/bonDeSortie")
@@ -24,6 +27,9 @@ public class BonDeSortieEndpoint {
 	
 	@Autowired
 	private BonDeSortieService serv;
+	
+	@Autowired
+	private HistoriqueArticleService historiqueServ;
 
 	@GetMapping("")
 	public List<BonDeSortie> findAllBonDeSorties() {
@@ -36,13 +42,19 @@ public class BonDeSortieEndpoint {
 	}
 
 	@PostMapping("")
-	public void saveBonDeSortie(@RequestBody BonDeSortie role) {
-		serv.saveBonDeSortie(role);
+	public void saveBonDeSortie(@RequestBody BonDeSortie b) {
+		HistoriqueArticle h = new HistoriqueArticle();
+		h.setArticle(b.getDemandeArticle().getArticle());
+		h.setDateHistorique(new Date(System.currentTimeMillis()));
+		h.setSortie(b.getDemandeArticle().getQuantite());
+		h.setMagasinier(b.getMagasinier());
+		historiqueServ.saveHistorique(h);
+		serv.saveBonDeSortie(b);
 	}
 	
 	@PutMapping("")
-	public void updateBonDeSortie(@RequestBody BonDeSortie role) {
-		serv.updateBonDeSortie(role);
+	public void updateBonDeSortie(@RequestBody BonDeSortie b) {
+		serv.updateBonDeSortie(b);
 	}
 	
 	@DeleteMapping("/{id}")
