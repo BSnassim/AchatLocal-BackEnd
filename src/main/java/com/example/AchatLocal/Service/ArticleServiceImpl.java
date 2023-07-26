@@ -8,13 +8,14 @@ import org.springframework.stereotype.Service;
 import com.example.AchatLocal.Model.Article;
 import com.example.AchatLocal.Model.Categorie;
 import com.example.AchatLocal.Repository.ArticleRepository;
+import com.example.AchatLocal.Repository.HistoriqueArticleRepository;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
 	
 	@Autowired
 	private ArticleRepository repo;
-
+	
 	@Override
 	public List<Article> findAll() {
 		return (repo.findAll() != null)? repo.findAll() : null;
@@ -22,7 +23,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public Article findById(Integer id) {
-		return (repo.findById(id).isPresent())? repo.findById(id).get() : null;
+		return repo.findById(id).orElse(null);
 	}
 
 	@Override

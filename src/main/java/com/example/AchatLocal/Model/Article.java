@@ -1,12 +1,16 @@
 package com.example.AchatLocal.Model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Data
@@ -24,6 +28,10 @@ public class Article {
 	@ManyToOne
 	@JoinColumn(name = "categorie_id", referencedColumnName = "id")
 	private Categorie categorie;
+	
+	@OneToMany(mappedBy = "article")
+	@Transient
+	private List<HistoriqueArticle> historique;
 
 	public void reduceStock(Integer quantite) {
 		if (quantite <= this.stock) {
