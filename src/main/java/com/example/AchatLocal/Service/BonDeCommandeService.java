@@ -1,8 +1,11 @@
 package com.example.AchatLocal.Service;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import com.example.AchatLocal.Model.BonDeCommande;
+
+import net.sf.jasperreports.engine.JRException;
 
 public interface BonDeCommandeService {
 	
@@ -11,6 +14,7 @@ public interface BonDeCommandeService {
 	public void saveBonDeCommande(BonDeCommande bc);
 	public void updateBonDeCommande(BonDeCommande bc);
 	public void deleteBonDeCommande(Integer id);
+	public byte[] pdfReport(BonDeCommande bc) throws JRException, FileNotFoundException;
 
 
 }

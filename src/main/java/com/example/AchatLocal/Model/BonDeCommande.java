@@ -21,6 +21,10 @@ public class BonDeCommande {
 	private Date dateCommande;
 	private Integer quantite;
 	private String extraArticle;
+
+	@ManyToOne
+	@JoinColumn(name="extraCategorie", referencedColumnName = "id")
+	private Categorie extraCategorie;
 	
 	@ManyToOne
 	@JoinColumn(name="article_id", referencedColumnName = "id")

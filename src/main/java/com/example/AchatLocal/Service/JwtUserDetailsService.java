@@ -13,11 +13,16 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.example.AchatLocal.Model.Role;
 import com.example.AchatLocal.Model.Utilisateur;
 import com.example.AchatLocal.Repository.UtilisateurRepository;
 
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
 public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Autowired
