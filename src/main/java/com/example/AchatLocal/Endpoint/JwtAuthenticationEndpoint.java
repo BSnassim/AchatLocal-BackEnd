@@ -53,6 +53,9 @@ public class JwtAuthenticationEndpoint {
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		
 		final Utilisateur user = userService.findByEmail(authenticationRequest.getEmail());
+		
+		System.out.println(authenticationRequest.getEmail());
+		System.out.println(authenticationRequest.getPassword());
 
 		return ResponseEntity.ok(new JwtResponse(token,
 				user.getRole()
@@ -75,7 +78,7 @@ public class JwtAuthenticationEndpoint {
 		return userService.findByEmail(email);
 	}
 	
-	@RequestMapping(value = "authenticate/checkPassword", method = RequestMethod.GET)
+	@RequestMapping(value = "/authenticate/checkPassword", method = RequestMethod.GET)
 	public Boolean checkPassword(@RequestParam(name = "rawPassword") String rawPassword, @RequestParam(name = "encodedPassword") String encodedPassword) {
 		return pwEN.myPasswordEncoder().matches(rawPassword, encodedPassword);
 	}
