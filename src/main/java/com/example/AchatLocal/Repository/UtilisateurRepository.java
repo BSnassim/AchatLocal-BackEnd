@@ -11,5 +11,7 @@ import com.example.AchatLocal.Model.Utilisateur;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer>{
 	
 	Optional<Utilisateur> findByEmail(String email);
+	long countByRole(String role);
+	long countByDepartementNom(String departement);
 
 }

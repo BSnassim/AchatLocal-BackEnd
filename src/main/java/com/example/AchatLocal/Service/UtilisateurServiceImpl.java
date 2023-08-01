@@ -53,4 +53,19 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		
 	}
 
+	@Override
+	public long countUsersByRole(String role) {
+		return repo.countByRole(role);
+	}
+	
+	@Override
+	public long countUsers() {
+		return repo.count();
+	}
+
+	@Override
+	public long countUsersByDepartement(String departement) {
+		return repo.countByDepartementNom(departement);
+	}
+
 }

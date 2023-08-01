@@ -53,5 +53,20 @@ public class UtilisateurEndpoint {
 	public void deleteUtilisateur(@PathVariable Integer id) {
 		serv.deleteUtilisateur(id);
 	}
+	
+	@GetMapping("/count")
+	public long countUsers() {
+		return serv.countUsers();
+	}
+	
+	@GetMapping("/count/{role}")
+	public long countUsersByRole(@PathVariable String role) {
+		return serv.countUsersByRole(role);
+	}
+	
+	@GetMapping("/count/departement/{departement}")
+	public long countUsersByDepartement(@PathVariable String departement) {
+		return serv.countUsersByDepartement(departement);
+	}
 
 }

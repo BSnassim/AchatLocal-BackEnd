@@ -12,4 +12,7 @@ public interface UtilisateurService {
 	public void saveUtilisateur(Utilisateur user);
 	public void updateUtilisateur(Utilisateur user);
 	public void deleteUtilisateur(Integer id);
+	public long countUsersByRole(String role);
+	public long countUsersByDepartement(String departement);
+	public long countUsers();
 }
