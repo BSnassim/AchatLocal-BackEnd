@@ -2,9 +2,7 @@ package com.example.AchatLocal.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,9 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.AchatLocal.Model.Role;
 import com.example.AchatLocal.Model.Utilisateur;
-import com.example.AchatLocal.Repository.UtilisateurRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -26,15 +22,15 @@ import jakarta.transaction.Transactional;
 public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Autowired
-	UtilisateurRepository repo;
+	UtilisateurService serv;
 	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		Optional<Utilisateur> user = repo.findByEmail(email);
-		Role roles = user.get().getRole();
-		if (user.isPresent()) {
-			return new User(user.get().getEmail(),
-					user.get().getPassword(),
+		Utilisateur user = serv.findByEmail(email);
+		String roles = user.getRole();
+		if (user != null) {
+			return new User(user.getEmail(),
+					user.getPassword(),
 					true,
 					true,
 					true,
@@ -46,17 +42,17 @@ public class JwtUserDetailsService implements UserDetailsService {
 		}
 	}
 	
-	private Collection<? extends GrantedAuthority> getAuthorities(Role role) {
-		 Collection<Role> r = new ArrayList<>();
+	private Collection<? extends GrantedAuthority> getAuthorities(String role) {
+		 Collection<String> r = new ArrayList<>();
 		 r.add(role);
         return getGrantedAuthorities(getPrivileges(r));
     }
 
-    private List<String> getPrivileges(Collection<Role> roles) {
+    private List<String> getPrivileges(Collection<String> roles) {
  
         List<String> privileges = new ArrayList<>();
-        for (Role role : roles) {
-            privileges.add(role.getNom());
+        for (String role : roles) {
+            privileges.add(role);
         }
         return privileges;
     }

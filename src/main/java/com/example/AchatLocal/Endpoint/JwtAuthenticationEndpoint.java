@@ -54,9 +54,6 @@ public class JwtAuthenticationEndpoint {
 		
 		final Utilisateur user = userService.findByEmail(authenticationRequest.getEmail());
 		
-		System.out.println(authenticationRequest.getEmail());
-		System.out.println(authenticationRequest.getPassword());
-
 		return ResponseEntity.ok(new JwtResponse(token,
 				user.getRole()
 				));

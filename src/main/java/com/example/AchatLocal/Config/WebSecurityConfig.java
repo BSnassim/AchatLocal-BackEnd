@@ -49,7 +49,7 @@ public class WebSecurityConfig {
 
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf(csrf -> csrf.disable()).cors(cors -> cors.disable())
+		http.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(auth -> auth.requestMatchers("/authenticate/**").permitAll()
 				.anyRequest().authenticated())
 				.
@@ -60,7 +60,7 @@ public class WebSecurityConfig {
 				.authenticationProvider(authenticationProvider())
 				.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 		// Adding a filter to validate the tokens with every request
-
+		http.cors();
 		return http.build();
 	}
 

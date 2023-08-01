@@ -21,10 +21,7 @@ public class Utilisateur {
 	private String password;
 	private String prenom;
 	private String nom;
-	
-	@ManyToOne
-	@JoinColumn(name="role_id", referencedColumnName = "id")
-	private Role role;
+	private String role;
 	
 	@ManyToOne
 	@JoinColumn(name="departement_id", referencedColumnName = "id")
