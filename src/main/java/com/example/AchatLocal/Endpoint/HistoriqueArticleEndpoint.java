@@ -27,6 +27,11 @@ public class HistoriqueArticleEndpoint {
 		return serv.findAllByArticle(id);
 	}
 	
+	@GetMapping("")
+	public List<HistoriqueArticle> findAll(){
+		return serv.findAll();
+	}
+	
 	@PostMapping("")
 	public void saveHistorique(@RequestBody HistoriqueArticle h) {
 		serv.saveHistorique(h);

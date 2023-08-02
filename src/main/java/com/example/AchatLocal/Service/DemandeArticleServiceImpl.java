@@ -72,5 +72,15 @@ public class DemandeArticleServiceImpl implements DemandeArticleService {
 		return pdfData;
 	}
 
+	@Override
+	public long countByEtat(String etat) {
+		return repo.countByEtat(etat);
+	}
+
+	@Override
+	public List<DemandeArticle> findByDemandeur(Integer id) {
+		return (repo.findAllByDemandeurId(id) != null)? repo.findAll() : null;
+	}
+
 
 }

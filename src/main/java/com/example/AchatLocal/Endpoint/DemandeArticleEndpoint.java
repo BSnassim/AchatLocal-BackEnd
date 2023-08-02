@@ -35,6 +35,11 @@ public class DemandeArticleEndpoint {
 	public List<DemandeArticle> findAllDemandeArticles() {
 		return serv.findAll();
 	}
+	
+	@GetMapping("/byDemandeur/{id}")
+	public List<DemandeArticle> findAllByDemandeur(@PathVariable Integer id) {
+		return serv.findByDemandeur(id);
+	}
 
 	@GetMapping("/{id}")
 	public DemandeArticle findDemandeArticleById(@PathVariable Integer id) {
@@ -70,6 +75,11 @@ public class DemandeArticleEndpoint {
 	@DeleteMapping("/{id}")
 	public void deleteDemandeArticle(@PathVariable Integer id) {
 		serv.deleteDemandeArticle(id);
+	}
+	
+	@GetMapping("/count/etat/{etat}")
+	public long countDemandeByEtat(@PathVariable String etat) {
+		return serv.countByEtat(etat);
 	}
 	
 

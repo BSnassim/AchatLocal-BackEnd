@@ -70,6 +70,7 @@ public class BonDeSortieServiceImpl implements BonDeSortieService {
 		a.reduceStock(bs.getDemandeArticle().getQuantite());
 		servArticle.updateArticle(a);
 		bs.getDemandeArticle().setEtat("Terminé");
+		servDa.updateDemandeArticle(bs.getDemandeArticle());
 		repo.save(bs);
 	}
 
