@@ -72,4 +72,9 @@ public class BonDeCommandeServiceImpl implements BonDeCommandeService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public long countAll() {
+		return repo.count();
+	}
+
 }

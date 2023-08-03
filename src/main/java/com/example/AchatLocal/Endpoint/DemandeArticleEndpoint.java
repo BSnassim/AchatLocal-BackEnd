@@ -82,5 +82,15 @@ public class DemandeArticleEndpoint {
 		return serv.countByEtat(etat);
 	}
 	
+	@GetMapping("/latest/{id}")
+	public DemandeArticle findLatest(@PathVariable Integer id) {
+		return serv.findLatestDemande(id);
+	}
+	
+	@GetMapping("/count")
+	public long countAll() {
+		return serv.countAll();
+	}
+	
 
 }

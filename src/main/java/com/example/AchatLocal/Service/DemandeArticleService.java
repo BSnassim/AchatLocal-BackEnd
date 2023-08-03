@@ -18,6 +18,8 @@ public interface DemandeArticleService {
 	public void deleteDemandeArticle(Integer id);
 	public byte[] pdfReport(DemandeArticle da) throws JRException, FileNotFoundException;
 	public long countByEtat(String etat);
+	public DemandeArticle findLatestDemande(Integer id);
+	public long countAll();
 
 
 }

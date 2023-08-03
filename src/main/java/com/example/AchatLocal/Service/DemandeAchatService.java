@@ -16,6 +16,6 @@ public interface DemandeAchatService {
 	public void updateDemandeAchat(DemandeAchat da);
 	public void deleteDemandeAchat(Integer id);
 	public byte[] pdfReport(DemandeAchat da) throws JRException, FileNotFoundException;
-
+	public long countAll();
 
 }

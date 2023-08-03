@@ -70,5 +70,10 @@ public class DemandeAchatEndpoint {
 	public void deleteDemandeAchat(@PathVariable Integer id) {
 		serv.deleteDemandeAchat(id);
 	}
+	
+	@GetMapping("/count")
+	public long countAll() {
+		return serv.countAll();
+	}
 
 }

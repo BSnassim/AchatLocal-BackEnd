@@ -82,5 +82,10 @@ public class BonDeSortieEndpoint {
 	public void deleteBonDeSortie(@PathVariable Integer id) {
 		serv.deleteBonDeSortie(id);
 	}
+	
+	@GetMapping("/count")
+	public long countAll() {
+		return serv.countAll();
+	}
 
 }

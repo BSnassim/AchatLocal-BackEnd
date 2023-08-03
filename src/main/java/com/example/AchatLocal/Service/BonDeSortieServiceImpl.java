@@ -84,4 +84,9 @@ public class BonDeSortieServiceImpl implements BonDeSortieService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public long countAll() {
+		return repo.count();
+	}
+
 }

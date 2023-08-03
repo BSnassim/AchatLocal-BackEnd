@@ -71,4 +71,9 @@ public class DemandeAchatServiceImpl implements DemandeAchatService {
 		repo.deleteById(id);
 	}
 
+	@Override
+	public long countAll() {
+		return repo.count();
+		}
+
 }

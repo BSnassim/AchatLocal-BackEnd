@@ -15,7 +15,7 @@ public interface BonDeSortieService {
 	public void updateBonDeSortie(BonDeSortie bs);
 	public void deleteBonDeSortie(Integer id);
 	public byte[] pdfReport(BonDeSortie bs) throws JRException, FileNotFoundException;
-
+	public long countAll();
 
 
 }

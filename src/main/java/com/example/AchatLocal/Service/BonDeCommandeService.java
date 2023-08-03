@@ -15,6 +15,7 @@ public interface BonDeCommandeService {
 	public void updateBonDeCommande(BonDeCommande bc);
 	public void deleteBonDeCommande(Integer id);
 	public byte[] pdfReport(BonDeCommande bc) throws JRException, FileNotFoundException;
+	public long countAll();
 
 
 }

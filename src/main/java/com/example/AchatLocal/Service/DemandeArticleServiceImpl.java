@@ -82,5 +82,15 @@ public class DemandeArticleServiceImpl implements DemandeArticleService {
 		return (repo.findAllByDemandeurId(id) != null)? repo.findAll() : null;
 	}
 
+	@Override
+	public DemandeArticle findLatestDemande(Integer id) {
+		return repo.findFirst1ByDemandeurIdOrderByDateDaDesc(id).orElse(null);
+	}
+
+	@Override
+	public long countAll() {
+		return repo.count();
+	}
+
 
 }
