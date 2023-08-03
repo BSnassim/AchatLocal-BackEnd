@@ -1,6 +1,6 @@
 package com.example.AchatLocal.Model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +19,7 @@ public class DemandeArticle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private Date dateDa;
+	private Timestamp dateDa;
 	private Integer quantite;
 	private String besoin;
 	private String extraArticle;

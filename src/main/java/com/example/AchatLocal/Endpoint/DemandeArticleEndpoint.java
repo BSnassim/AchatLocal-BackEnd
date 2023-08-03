@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.AchatLocal.Model.DemandeArticle;
 import com.example.AchatLocal.Service.DemandeArticleService;
 
-import net.sf.jasperreports.engine.JRException;
-
 @RequestMapping("/demandeArticle")
 @CrossOrigin
 @RestController

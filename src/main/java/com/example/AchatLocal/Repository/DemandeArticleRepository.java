@@ -13,8 +13,7 @@ import com.example.AchatLocal.Model.DemandeArticle;
 public interface DemandeArticleRepository extends JpaRepository<DemandeArticle, Integer>{
 	
 	long countByEtat(String etat);
-	List<DemandeArticle> findAllByDemandeurId(Integer id);
-	
+	List<DemandeArticle> findByDemandeurId(Integer id);
 	Optional<DemandeArticle> findFirst1ByDemandeurIdOrderByDateDaDesc(Integer id);
 
 }

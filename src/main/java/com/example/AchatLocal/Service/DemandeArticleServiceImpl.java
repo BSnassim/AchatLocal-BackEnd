@@ -79,7 +79,7 @@ public class DemandeArticleServiceImpl implements DemandeArticleService {
 
 	@Override
 	public List<DemandeArticle> findByDemandeur(Integer id) {
-		return (repo.findAllByDemandeurId(id) != null)? repo.findAll() : null;
+		return (repo.findByDemandeurId(id) != null)? repo.findByDemandeurId(id) : null;
 	}
 
 	@Override
