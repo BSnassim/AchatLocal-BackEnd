@@ -54,7 +54,7 @@ public class BonDeSortieServiceImpl implements BonDeSortieService {
 		parameters.put("idDemande", bs.getId().toString());
 		parameters.put("magasinier", nomM);
 		parameters.put("categorie", bs.getDemandeArticle().getArticle().getCategorie().getLibelle());
-		parameters.put("idArticle", bs.getDemandeArticle().getArticle().getId());
+		parameters.put("idArticle", bs.getDemandeArticle().getArticle().getId().toString());
 		parameters.put("libelleArticle", bs.getDemandeArticle().getArticle().getLibelle());
 		parameters.put("quantite", bs.getDemandeArticle().getQuantite().toString());
 		JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters,new JREmptyDataSource());
