@@ -31,7 +31,7 @@ public class DemandeAchat {
 	private Article article;
 
 	@ManyToOne
-	@JoinColumn(name="magasinier_id", referencedColumnName = "id")
-	private Utilisateur magasinier;
+	@JoinColumn(name="demandeur_id", referencedColumnName = "id")
+	private Utilisateur demandeur;
 
 }

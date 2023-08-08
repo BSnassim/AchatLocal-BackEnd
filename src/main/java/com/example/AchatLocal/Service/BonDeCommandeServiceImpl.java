@@ -41,7 +41,7 @@ public class BonDeCommandeServiceImpl implements BonDeCommandeService {
 	public byte[] pdfReport(BonDeCommande bc) throws JRException, FileNotFoundException {
 		File file = ResourceUtils.getFile("classpath:bonDeCommande.jrxml");
         JasperReport report = JasperCompileManager.compileReport(file.getAbsolutePath());
-        String nomM = bc.getMagasinier().getNom()+" "+ bc.getMagasinier().getPrenom();
+        String nomM = bc.getDemandeur().getNom()+" "+ bc.getDemandeur().getPrenom();
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("dateDemande",bc.getDateCommande().toString());
 		parameters.put("idDemande", bc.getId().toString());

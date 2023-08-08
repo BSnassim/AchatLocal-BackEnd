@@ -41,7 +41,7 @@ public class DemandeAchatServiceImpl implements DemandeAchatService {
 	public byte[] pdfReport(DemandeAchat da) throws JRException, FileNotFoundException {
 		File file = ResourceUtils.getFile("classpath:demandeAchat.jrxml");
         JasperReport report = JasperCompileManager.compileReport(file.getAbsolutePath());
-        String nomM = da.getMagasinier().getNom()+" "+ da.getMagasinier().getPrenom();
+        String nomM = da.getDemandeur().getNom()+" "+ da.getDemandeur().getPrenom();
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("dateDemande",da.getDateAchat().toString());
 		parameters.put("idDemande", da.getId().toString());

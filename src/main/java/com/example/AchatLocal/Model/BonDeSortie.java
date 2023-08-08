@@ -26,5 +26,8 @@ public class BonDeSortie {
 	@ManyToOne
 	@JoinColumn(name="magasinier_id", referencedColumnName = "id")
 	private Utilisateur magasinier;
+	@ManyToOne
+	@JoinColumn(name="demandeur_id", referencedColumnName = "id")
+	private Utilisateur demandeur;
 
 }
