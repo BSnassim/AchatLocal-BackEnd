@@ -19,5 +19,7 @@ public class Categorie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String libelle;	
+	private String libelle;
+	private String typeImportation;
+	
 }
